@@ -1,0 +1,174 @@
+.header{
+height: 120px;
+}
+
+.header_logo{
+font-size: 40px;
+}
+
+.input_search{
+border-radius: 50px;
+}
+
+.header_inner{
+height: 90px;
+border-bottom: solid 3px green;
+padding: 10px;
+}
+
+.margin_input_size{
+margin: 10px;
+}
+
+.best_mambers_li{
+padding-bottom: 10px;
+}
+
+ul{
+list-style: none;
+padding-left: 0px;
+}
+
+.img_avatar_settings{
+margin: 10px;
+width: 100px;
+border-radius: 10px;
+}
+
+.input_title_avatar{
+width: 300px;
+height: 40px;
+border-color: green;
+resize: none;
+}
+
+.input_title{
+width: 600px;
+height: 30px;
+border-color: green;
+resize: none;
+}
+
+.input_text{
+width: 600px;
+height: 350px;
+border-color: green;
+resize: none;
+}
+
+.input_tags{
+width: 600px;
+height: 25px;
+border-color: green;
+resize: none;
+}
+
+.title_text_tags_size{
+font-size: 20px;
+}
+
+.pagination_fount{
+color: green;
+}
+
+.href_hot_ques{
+font-size: 20px;
+}
+
+.tags_size{
+font-size: 20px;
+}
+
+.tags {
+display: inline;
+font-size: 25px;
+word-break:break-all;
+}
+
+.ques_big_ques{
+width: 900px;
+padding: 10px;
+border-bottom: solid 3px green;
+}
+
+.answer_in_blog{
+width: 900px;
+padding: 10px;
+border-bottom: solid 3px green;
+}
+
+.error_input{
+color: red;
+}
+
+.btn_margin{
+margin: 20px;
+}
+
+.input_text_your_answer{
+margin: 20px;
+width: 600px;
+height: 200px;
+border-color: green;
+resize: none;
+}
+
+.number {
+  width: 50px;
+}
+
+.blog_ques_title_fount_size{
+font-size: 25px;
+}
+
+.img_avatar{
+width: 50px;
+border-radius: 10px;
+}
+
+.img_avatar_ques_big{
+width: 100px;
+border-radius: 10px;
+}
+
+.img_avatar_ques{
+width: 80px;
+border-radius: 10px;
+}
+
+.blog_ques_answer{
+display: table-cell;
+vertical-align: bottom;
+font-size: 15px;
+}
+
+.blog_ques_tags{
+display: inline;
+font-size: 15px;
+display: table-cell;
+vertical-align: bottom;
+word-break:break-all;
+}
+
+.blog_ques{
+width: 850px;
+padding: 10px;
+margin: 10px;
+border: solid 3px green;
+}
+
+.blog_ques_text{
+display: inline;
+display: table-cell;
+vertical-align: bottom;
+font-size: 15px;
+word-break:break-all;
+}
+
+.login{
+font-size: 20px;
+}
+
+.name{
+font-size: 20px;
+}

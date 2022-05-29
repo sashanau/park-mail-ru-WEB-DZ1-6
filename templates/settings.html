@@ -1,0 +1,20 @@
+{% extends 'incl/base.html' %}
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+            <p class="header_logo">
+                Settings: {{ user.username }}
+            </p>
+        <form class="form mt-5" action="/settings/" method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+        {% if request.user.userprofile.avatar %}
+         <img class="input_search img_avatar_settings" src="{{ request.user.userprofile.avatar.url }}">
+        {% endif %}
+        <br>
+        {% buttons %}
+            <button type="submit" class="btn btn-primary">Submit</button>
+        {% endbuttons %}
+        </form>
+{% endblock content %}

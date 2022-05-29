@@ -1,0 +1,25 @@
+{% load static %}
+
+<div class="blog_ques">
+    <div class="row">
+        <div class="col-2">
+            <img src="
+                    {% if answer.author.avatar %}{{ answer.author.avatar.url }}{% else %}{% static 'img/Avatar.jpg' %}{% endif %}"
+                 class="img_avatar_ques" alt="Avatar image">
+            <br>
+            <p>{{ answer.author.user.username }}</p><br>
+        </div>
+        <div class="col-8">
+            <p class="blog_ques_text">
+                {{ answer.context }}
+            </p>
+            <br><br>
+            <div class="form-check">
+                <input class="ans-data form-check-input" data-id="{{ answer.id }}" type="checkbox" {% if answer.is_correct %} checked {% endif %} value="" id="flexCheckDefault0">
+                <label class="form-check-label" for="flexCheckDefault0">
+                    Correct!
+                </label>
+            </div>
+        </div>
+    </div>
+</div>

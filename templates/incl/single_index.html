@@ -1,0 +1,49 @@
+{% load static %}
+
+<div class="blog_ques">
+    <div class="row">
+        <div class="col-2">
+            <img src="
+                    {% if index.author.avatar %}{{ index.author.avatar.url }}{% else %}{% static 'img/Avatar.jpg' %}{% endif %}"
+                 class="img_avatar_ques" alt="Avatar image">
+            <br>
+            <p>{{ index.author.user.username }}</p>
+            <br>
+            {% if request.user.is_authenticated %}
+                <button type="button" data-id="{{ index.id }}" class="vote-up">&#128077;</button>
+                <span class="like-data{{ index.id }}">  Likes: {{ index.rating_num }}</span>
+                <button type="button" data-id="{{ index.id }}" class="vote-down">&#128078;</button>
+            {% endif %}
+        </div>
+        <div class="col-8">
+            <a class="blog_ques_title_fount_size" href="{% url "question" index.id %}">
+                {{ index.title }}
+            </a>
+            <br>
+            <p class="blog_ques_text">
+                {{ index.context }}
+            </p>
+            <br><br>
+            <div class="row">
+                <div class="col-3">
+                    <p class="blog_ques_answer">
+                        answer ({{ index.answer }})
+                    </p>
+                </div>
+                <div class="col-9">
+                    <p class="blog_ques_text">
+                        Tags:&nbsp;
+                    </p>
+                    {% for tag in index.tags.all %}
+                        <a href="{% url "tag" tag %}" class="blog_ques_tags">
+                            {{ tag }}
+                        </a>
+                        <p class="blog_ques_text">
+                            &nbsp;
+                        </p>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

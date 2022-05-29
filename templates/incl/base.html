@@ -1,0 +1,129 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>AskNaumenko</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap/css/bootstrap.css' %}">
+    <link rel="stylesheet" href="{% static 'css/my_css/my_css.css' %}">
+</head>
+<body>
+<header class="header">
+    <div class="container header_inner">
+        <div class="row align-items-center">
+            <div class="col-3">
+                <h1 class="header_logo">
+                    <a href="{% url "index" %}" style="text-decoration: none;color: black;">
+                        AskNaumenko
+                    </a>
+                </h1>
+            </div>
+            <div class="col-4 search">
+                <input type="search" class="form-control input_search" placeholder="Search">
+            </div>
+            <div class="col-2">
+                {% if user %}
+                <button type="button" class="btn btn-success btn_style" onclick="location.href='{% url "ask" %}'">
+                    ASK!
+                </button>
+                {% endif %}
+            </div>
+            <div class="col-1">
+                {% if user.userprofile.avatar %}
+                <img src="{{ user.userprofile.avatar.url }}" class="img-fluid img_avatar" alt="Avatar image">
+                {% endif %}
+            </div>
+            <div class="col-2">
+                {% if user %}
+                    <div class="name">
+                        {{ user.username }}
+                    </div>
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <a href="{% url "settings" %}" class="login">
+                                settings
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="{% url "logout" %}" class="login">
+                                log out
+                            </a>
+                        </div>
+                    </div>
+                {% else %}
+                    <div class="row align-items-center">
+                        <div class="col-6">
+                            <a href="{% url "login" %}" class="login">
+                                log in
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</header>
+<main>
+    <div class="container">
+        <div class="row">
+            <div class="col-9">
+                {% block content %}
+                {% endblock content %}
+            </div>
+            <div class="col-3">
+                <p class="header_logo">
+                    Popular Tags
+                </p>
+                <p class="tags">
+                    <a style="text-decoration:none; color: black" href="{% url "tag" "perl" %}">perl</a>
+                    <a style="text-decoration:none; color: red" href="{% url "tag" "python" %}">python</a>
+                    <a style="text-decoration:none; color: black" href="{% url "tag" "TechnoPark" %}">TechnoPark</a>
+                </p>
+                <br>
+                <p class="tags">
+                    <a style="text-decoration:none; color: red" href="{% url "tag" "MySQL" %}">MySQL</a>
+                    <a style="text-decoration:none; color: green" href="{% url "tag" "django" %}">django</a>
+                    <a style="text-decoration:none; color: black" href="{% url "tag" "Mail.ru" %}">Mail.ru</a>
+                </p>
+                <br>
+                <p class="tags">
+                    <a style="text-decoration:none; color: black" href="{% url "tag" "Voloshin" %}">Voloshin</a>
+                    <a style="text-decoration:none; color: yellow" href="{% url "tag" "Firefox" %}">Firefox</a>
+                </p>
+                <p class="header_logo">
+                    Best Members
+                </p>
+                <ul>
+                    <li class="best_mambers_li">
+                        <a href="#">
+                            Mr.Freeman
+                        </a>
+                    </li>
+                    <li class="best_mambers_li">
+                        <a href="#">
+                            Dr.House
+                        </a>
+                    </li>
+                    <li class="best_mambers_li">
+                        <a href="#">
+                            Bender
+                        </a>
+                    </li>
+                    <li class="best_mambers_li">
+                        <a href="#">
+                            Queen Victoria
+                        </a>
+                    </li>
+                    <li class="best_mambers_li">
+                        <a href="#">
+                            A.Naumenko
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</main>
+</body>
+</html>

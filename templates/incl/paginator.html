@@ -1,0 +1,15 @@
+<nav aria-label="Page navigation example">
+    <ul class="pagination">
+        {% if list_index.has_previous %}
+        <li class="page-item"><a class="page-link pagination_fount" href="?page=1">first</a></li>
+        <li class="page-item"><a class="page-link pagination_fount" href="?page={{ list_index.previous_page_number }}"> {{ list_index.previous_page_number }} </a></li>
+        {% endif %}
+        <li class="page-item"><a class="page-link pagination_fount">
+            {{ list_index.number }}
+        </a></li>
+        {% if list_index.has_next %}
+        <li class="page-item"><a class="page-link pagination_fount" href="?page={{ list_index.next_page_number }}"> {{ list_index.next_page_number }} </a></li>
+        <li class="page-item"><a class="page-link pagination_fount" href="?page={{ list_index.paginator.num_pages }}">last({{ list_index.paginator.num_pages }})</a></li>
+        {% endif %}
+    </ul>
+</nav>
